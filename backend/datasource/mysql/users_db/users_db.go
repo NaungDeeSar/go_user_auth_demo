@@ -1,4 +1,4 @@
-package usersdb
+package users_db
 
 import (
 	"database/sql"
@@ -11,9 +11,9 @@ import (
 var (
 	Client   *sql.DB
 	username = "root"
-	password = ""
+	password = "root"
 	host     = "127.0.0.1:3306"
-	schema   = "users_db_02"
+	schema   = "users_db_01"
 )
 
 func init() {
@@ -24,8 +24,9 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
-	if err := Client.Ping(); err !=nil{
+	if err := Client.Ping(); err != nil {
 		panic(err)
 	}
-   log.Println("database successfully configured")
+	log.Println("database successfully configured")
+
 }
